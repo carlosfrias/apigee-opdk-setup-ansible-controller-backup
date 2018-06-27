@@ -7,6 +7,7 @@ Requirements
 ------------
 
 * This roles will read attributes stored in the Ansible cache by the [Apigee OPDK Setup Ansible Controller](https://github.com/carlosfrias/apigee-opdk-setup-ansible-controller)
+* This script will backup the settings of Ansible Control server. 
 
 Role Variables
 --------------
