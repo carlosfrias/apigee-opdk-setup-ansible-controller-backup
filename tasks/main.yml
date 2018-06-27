@@ -1,5 +1,8 @@
 ---
 # tasks file for apigee-opdk-setup-ansible-controller-backup
+- debug:
+    var: target_download_folder
+
 - name: Create local folder
   file:
     path: "{{ target_download_folder }}"
