@@ -1,0 +1,12 @@
+---
+# defaults file for apigee-opdk-setup-ansible-controller-backup
+target_download_folder: ansible-controller-backup
+target_download_pattern:
+- { dir: "{{ inventory_folder }}/", pattern: '*' }
+- { dir: "{{ target_ansible_workspace }}/roles/", pattern: '*' }
+- { dir: "{{ target_ansible_workspace }}/library/", pattern: '*' }
+- { dir: "{{ target_ansible_workspace }}/configurations/", pattern: '*' }
+- { dir: "{{ target_ansible_workspace }}/inventory/", pattern: '*' }
+- { dir: "{{ target_apigee_config_workspace }}/", pattern: '*' }
+- { dir: "~/.ssh/", pattern: '*' }
+
