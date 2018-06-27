@@ -1,31 +1,38 @@
-Role Name
+Apigee OPDK Setup Ansible Controller
 =========
 
-A brief description of the role goes here.
+This role will backup an Ansible controller that was setup using the role [Apigee OPDK Setup Ansible Controller](https://github.com/carlosfrias/apigee-opdk-setup-ansible-controller). 
 
 Requirements
 ------------
 
-Any pre-requisites that may not be covered by Ansible itself or the role should be mentioned here. For instance, if the role uses the EC2 module, it may be a good idea to mention in this section that the boto package is required.
+* This roles will read attributes stored in the Ansible cache by the [Apigee OPDK Setup Ansible Controller](https://github.com/carlosfrias/apigee-opdk-setup-ansible-controller)
 
 Role Variables
 --------------
 
-A description of the settable variables for this role should go here, including any variables that are in defaults/main.yml, vars/main.yml, and any variables that can/should be set via parameters to the role. Any variables that are read from other roles and/or the global scope (ie. hostvars, group vars, etc.) should be mentioned here as well.
+A description of the variables for this role can be found below: 
+
+| Variable | Description |
+| --- | --- |
+| target_download_folder | This is the path where backups should be kept |
+| target_download_pattern | This collection is the list of files that should be retrieved and stored as a backup. This collection follows the convention: `- { dir: "{{ inventory_folder }}/", pattern: '*' }` | 
 
 Dependencies
 ------------
 
-A list of other roles hosted on Galaxy should go here, plus any details in regards to parameters that may need to be set for other roles, or variables that are used from other roles.
+This role depends on the Ansible role [Apigee OPDK Setup Ansible Controller](https://github.com/carlosfrias/apigee-opdk-setup-ansible-controller) to store values in the Ansible cache. 
 
 Example Playbook
 ----------------
 
 Including an example of how to use your role (for instance, with variables passed in as parameters) is always nice for users too:
 
-    - hosts: servers
+    - hosts: {{ target_hosts }}
       roles:
-         - { role: username.rolename, x: 42 }
+         - apigee-opdk-setup-ansible-controller-backup
+         
+    ansible_playbook      
 
 License
 -------
