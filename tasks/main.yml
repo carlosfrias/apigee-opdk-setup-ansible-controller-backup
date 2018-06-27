@@ -1,16 +1,5 @@
 ---
 # tasks file for apigee-opdk-setup-ansible-controller-backup
-#- debug:
-#    var: target_download_folder
-#
-#- name: Create local folder
-#  become: yes
-#  file:
-#    path: "{{ target_download_folder }}"
-#    state: directory
-#    owner: "{{ ansible_user }}"
-#  delegate_to: localhost
-
 - name: Fetch files
   import_role:
     name: apigee-fetch-files
